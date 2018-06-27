@@ -16,4 +16,11 @@ Running:
 
 Go to  `localhost:5000`
 
+Wiki
+---
 Built with [Flask](http://flask.pocoo.org/) and [pdf.js](https://github.com/mozilla/pdf.js)
+
+Directory structure:
+- `\instance` stores all data(eg. config, uploaded files) about current running server
+- `app\templates` has all html
+- `app\static` has all js/css/static files
