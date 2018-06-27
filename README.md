@@ -11,6 +11,6 @@ Setup:
 
 Running:
 
-    python run.py
+    python run.py   # flask automatically reloads on changes
 
 Go to  `localhost:5000`
