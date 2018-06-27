@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="description">
     <meta name="author" content="author">
-    <title>Title</title>
+    <title>Harbinger</title>
     <link rel="icon" href="favicon.ico">
     <!-- fonts -->
     <link rel='stylesheet' href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto:300">
@@ -18,8 +18,12 @@
 
 <body>
     <div id='app'>
-        Hello world!
+        Harbinger
     </div>
+    <form action='/api' method=post enctype=multipart/form-data>
+        <input type=file name=file>
+        <input type=submit value=Upload>
+    </form>
 </body>
 
 <script src='/static/index.js'></script>
