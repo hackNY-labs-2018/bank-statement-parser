@@ -22,8 +22,9 @@ def allowed_file(filename):
 '''
 Enables viewing/editing of csv from pdf
 '''
-def viewer(filedir, methods=['GET']):
-    return render_template("viewer.html", filedir=filedir)
+@app.route('/viewer/<filename>', methods=['GET'])
+def viewer(filename):
+    return render_template("viewer.html", filename=filename)
 
 '''
 Serves csv file to front-end
@@ -33,7 +34,7 @@ def uploaded_file(filename):
     return send_from_directory(app.instance_path, filename)
 
 @app.route('/upload', methods=['POST'])
-def api():
+def upload():
     # check if the post request has the file part
     if 'file' not in request.files:
         flash('No file part')
@@ -55,4 +56,5 @@ def api():
         print(newfile)
         file.save(newfile)
         print('File saved successfully.')
-        return redirect(url_for('uploaded_file', filename=filename))
+        return redirect(url_for('viewer', filename=filename))
+        # return redirect(url_for('uploaded_file', filename=filename))
