@@ -1,5 +1,4 @@
-# ignore prod config.py file b/c contains secret
-instance/config.py
+# NOTE: /instance folder by default ignored (see further below)
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

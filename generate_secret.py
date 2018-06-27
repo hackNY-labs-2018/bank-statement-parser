@@ -1,7 +1,8 @@
 '''
 Generates a random secret key for `instance/config.py`
 (used to encrypt cookies and save in browser)
-from https://gist.github.com/geoffalday/2021517
+
+From https://gist.github.com/geoffalday/2021517
 '''
 
 import os, binascii
