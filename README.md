@@ -15,3 +15,5 @@ Running:
     python run.py   # flask automatically reloads on changes
 
 Go to  `localhost:5000`
+
+Built with [Flask](http://flask.pocoo.org/) and [pdf.js](https://github.com/mozilla/pdf.js)

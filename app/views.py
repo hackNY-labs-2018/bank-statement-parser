@@ -20,6 +20,12 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() == 'pdf'
 
 '''
+Enables viewing/editing of csv from pdf
+'''
+def viewer(filedir, methods=['GET']):
+    return render_template("viewer.html", filedir=filedir)
+
+'''
 Serves csv file to front-end
 '''
 @app.route('/uploads/<filename>')
