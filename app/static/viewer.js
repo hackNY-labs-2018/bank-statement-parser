@@ -1,14 +1,16 @@
 // If absolute URL from the remote server is provided, configure the CORS
 // header on that server.
-var url = '//cdn.mozilla.net/pdfjs/tracemonkey.pdf';
+const wloc = window.location.toString();
+const filename = wloc.slice(wloc.lastIndexOf('/')+1)
+const url = '/uploads/' + filename;
 
 // Loaded via <script> tag, create shortcut to access PDF.js exports.
-var pdfjsLib = window['pdfjs-dist/build/pdf'];
+const pdfjsLib = window['pdfjs-dist/build/pdf'];
 
 // The workerSrc property shall be specified.
 pdfjsLib.GlobalWorkerOptions.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.js';
 
-var pdfDoc = null,
+let pdfDoc = null,
     pageNum = 1,
     pageRendering = false,
     pageNumPending = null,
@@ -24,16 +26,16 @@ function renderPage(num) {
     pageRendering = true;
     // Using promise to fetch the page
     pdfDoc.getPage(num).then(function (page) {
-        var viewport = page.getViewport(scale);
+        let viewport = page.getViewport(scale);
         canvas.height = viewport.height;
         canvas.width = viewport.width;
 
         // Render PDF page into canvas context
-        var renderContext = {
+        let renderContext = {
             canvasContext: ctx,
             viewport: viewport
         };
-        var renderTask = page.render(renderContext);
+        let renderTask = page.render(renderContext);
 
         // Wait for rendering to finish
         renderTask.promise.then(function () {
