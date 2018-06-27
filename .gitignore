@@ -1,3 +1,6 @@
+# ignore prod config.py file b/c contains secret
+instance/config.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
