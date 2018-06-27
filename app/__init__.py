@@ -11,4 +11,4 @@ app = Flask(__name__, instance_relative_config=True)
 from app import views
 
 # Load the config file from config.py
-# app.config.from_object('config')
+app.config.from_object('config')
