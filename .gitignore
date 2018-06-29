@@ -1,3 +1,5 @@
+# NOTE: /instance folder by default ignored (see further below)
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
