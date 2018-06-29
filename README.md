@@ -8,7 +8,14 @@ Setup:
     virtualenv venv
     source venv/bin/activate
     pip install -r requirements.txt
-    python generate_secret.py   # follow the instructions when you run this
+    python generate_secret.py  # save the output generated here for the next step
+
+Create a new directory `instance` and then create a new file `instance/config.py` with the following contents:
+
+    SECRET = b'xxx'
+    DEBUG = True
+
+replacing `b'xxx'` with the secret key you generated above.
 
 Running:
 
